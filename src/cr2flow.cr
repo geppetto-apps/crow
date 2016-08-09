@@ -35,7 +35,11 @@ module Cr2flow
   end
 
   private def self.transpile(node : Crystal::Assign)
-    "const " + transpile node.to_s + ";"
+    if node.target.to_s.starts_with? "@"
+      "this." + transpile(node.to_s.sub(/^@/, "")) + ";"
+    else
+      "const " + transpile node.to_s + ";"
+    end
   end
 
   private def self.transpile(call : Crystal::Call)
@@ -57,5 +61,49 @@ module Cr2flow
       method = "console.log" if method == "p"
       "#{method}(#{args.join(", ")});"
     end
+  end
+
+  private def self.transpile(klass : Crystal::ClassDef)
+    class_name = klass.name.to_s
+    if klass.superclass
+      class_name += " extends #{klass.superclass.to_s}"
+    end
+
+    class_body = format_body(transpile(klass.body))
+
+    <<-JS
+    class #{class_name} {#{class_body}}
+    JS
+  end
+
+  private def self.transpile(method : Crystal::Def)
+    name = method.name
+    name = "constructor" if name == "initialize"
+    if method.receiver && method.receiver.to_s == "self"
+      name = "static #{name}"
+    end
+
+    args = method.args.map do |arg|
+      val = "#{arg.name}"
+      case arg.restriction
+      when Crystal::Path
+        val += " : #{arg.restriction.to_s}"
+      end
+      val
+    end
+
+    method_body = format_body(transpile(method.body))
+
+    <<-JS
+    #{name}(#{args.join(", ")}) {#{method_body}}
+    JS
+  end
+
+  private def self.format_body(body)
+    indented_body = body.split("\n").map do |line|
+      "  #{line}"
+    end.join("\n")
+
+    "\n#{indented_body}\n".gsub(/\A\s+\Z/, "")
   end
 end
