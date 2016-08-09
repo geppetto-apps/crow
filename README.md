@@ -38,6 +38,90 @@ $ cat foo.cr | docker run -i geppetto-apps/cr2flow > foo.js.flow
 You need to have a copy of the [Crystal source code][cr-src] sitting in a directory
 next to `cr2flow`.
 
+## Supported AST nodes
+
+Extracted from [Crystal's compiler][cr-parser].
+
+- [x] Expressions
+- [ ] NilLiteral
+- [ ] BoolLiteral
+- [ ] NumberLiteral
+- [ ] CharLiteral
+- [x] StringLiteral
+- [x] StringInterpolation
+- [ ] SymbolLiteral
+- [ ] ArrayLiteral
+- [ ] HashLiteral
+- [ ] NamedTupleLiteral
+- [ ] RangeLiteral
+- [ ] RegexLiteral
+- [ ] TupleLiteral
+- [ ] Var
+- [ ] Block
+- [x] Call
+- [ ] NamedArgument
+- [ ] If
+- [ ] Unless
+- [ ] IfDef
+- [x] Assign
+- [ ] MultiAssign
+- [ ] InstanceVar
+- [ ] ReadInstanceVar
+- [ ] ClassVar
+- [ ] Global
+- [ ] BinaryOp
+- [ ] Arg
+- [ ] ProcNotation
+- [x] Def
+- [ ] Macro
+- [ ] UnaryExpression
+- [ ] VisibilityModifier
+- [ ] IsA
+- [ ] RespondsTo
+- [ ] Require
+- [ ] When
+- [ ] Case
+- [ ] ImplicitObj
+- [ ] Path
+- [x] ClassDef
+- [ ] ModuleDef
+- [ ] While
+- [ ] Until
+- [ ] Generic
+- [ ] TypeDeclaration
+- [ ] UninitializedVar
+- [ ] Rescue
+- [ ] ExceptionHandler
+- [ ] ProcLiteral
+- [ ] ProcPointer
+- [ ] Union
+- [ ] Self
+- [ ] ControlExpression
+- [ ] Yield
+- [ ] Include
+- [ ] Extend
+- [ ] LibDef
+- [ ] FunDef
+- [ ] TypeDef
+- [ ] CStructOrUnionDef
+- [ ] EnumDef
+- [ ] ExternalVar
+- [ ] Alias
+- [ ] Metaclass
+- [ ] Cast
+- [ ] NilableCast
+- [ ] TypeOf
+- [ ] Attribute
+- [ ] MacroExpression
+- [ ] MacroLiteral
+- [ ] MacroIf
+- [ ] MacroFor
+- [ ] MacroVar
+- [ ] Underscore
+- [ ] MagicConstant
+- [ ] Asm
+- [ ] AsmOperand
+
 ## Contributing
 
 1. Fork it ( https://github.com/geppetto-apps/cr2flow/fork )
@@ -52,6 +136,7 @@ next to `cr2flow`.
 
 [cr]: https://crystal-lang.org/
 [cr-src]: https://github.com/crystal-lang/crystal
+[cr-syntax]: https://github.com/crystal-lang/crystal/blob/master/src/compiler/crystal/syntax/ast.cr
 [docker]: https://www.docker.com/
 [flow]: https://flowtype.org/
 [babel]: https://babeljs.io/
