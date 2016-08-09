@@ -19,8 +19,17 @@ TODO: Publish with homebrew
 # Compiles and outputs to foo.js.flow
 $ cr2flow foo.cr
 
+# Same as above
+$ cat foo.cr | cr2flow > foo.js.flow
+
 # Compiles and outputs to foo.js (flow must be installed)
 $ cr2flow --emit es6 foo.cr
+```
+
+You can also use [Docker][docker]:
+
+```sh
+$ cat foo.cr | docker run -i geppetto-apps/cr2flow > foo.js.flow
 ```
 
 ## Development
@@ -42,5 +51,6 @@ next to `cr2flow`.
 
 [cr]: https://crystal-lang.org/
 [cr-src]: https://github.com/crystal-lang/crystal
+[docker]: https://www.docker.com/
 [flow]: https://flowtype.org/
 [babel]: https://babeljs.io/

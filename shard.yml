@@ -5,6 +5,11 @@ dependencies:
   crystal:
     path: ../crystal
 
+development_dependencies:
+  commander:
+    github: mrrooijen/commander
+    version: ~> 0.3.3
+
 authors:
   - Theodor Tonum <theodor@tonum.no>
 
