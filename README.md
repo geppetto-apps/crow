@@ -22,8 +22,9 @@ $ cr2flow foo.cr
 # Same as above
 $ cat foo.cr | cr2flow > foo.js.flow
 
-# Compiles and outputs to foo.js (flow must be installed)
-$ cr2flow --emit es6 foo.cr
+# Compile to JavaScript (via Babel)
+$ npm install babel-preset-es2015 babel-plugin-transform-flow-strip-types
+$ cr2flow foo.cr |  babel --plugins transform-flow-strip-types --presets es2015
 ```
 
 You can also use [Docker][docker]:
