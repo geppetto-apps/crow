@@ -4,33 +4,29 @@
 
 # cr2flow
 
-TODO: Write a description here
+`cr2flow` transpiles [Crystal][cr] source code to valid [Flow][flow]/ES2015/JavaScript).
+
+Code that is transpiled to valid Flow syntax may be transpiled to valid ES2015,
+which may be transpiled to Javascript (via [Babel][babel]).
 
 ## Installation
 
-
-Add this to your application's `shard.yml`:
-
-```yaml
-dependencies:
-  cr2flow:
-    github: geppetto-apps/cr2flow
-```
-
+TODO: Publish with homebrew
 
 ## Usage
 
+```sh
+# Compiles and outputs to foo.js.flow
+$ cr2flow foo.cr
 
-```crystal
-require "cr2flow"
+# Compiles and outputs to foo.js (flow must be installed)
+$ cr2flow --emit es6 foo.cr
 ```
-
-
-TODO: Write usage instructions here
 
 ## Development
 
-TODO: Write development instructions here
+You need to have a copy of the [Crystal source code][cr-src] sitting in a directory
+next to `cr2flow`.
 
 ## Contributing
 
@@ -43,3 +39,8 @@ TODO: Write development instructions here
 ## Contributors
 
 - [theodorton](https://github.com/theodorton) Theodor Tonum - creator, maintainer
+
+[cr]: https://crystal-lang.org/
+[cr-src]: https://github.com/crystal-lang/crystal
+[flow]: https://flowtype.org/
+[babel]: https://babeljs.io/
