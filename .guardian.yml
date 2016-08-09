@@ -1,0 +1,8 @@
+files: ./spec/**/*.cr
+run: crystal spec
+---
+files: ./src/**/*.cr
+run: crystal spec
+---
+files: ./shard.yml
+run: crystal deps
