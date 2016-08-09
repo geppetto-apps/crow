@@ -39,12 +39,26 @@ describe Cr2flow do
       def self.pipe
       end
     end
+    Foo.pipe
     CRYSTAL
 
     flow = <<-FLOW
     class Foo extends Bar {
       static pipe() {}
     }
+    Foo.pipe();
+    FLOW
+
+    Cr2flow.convert(crystal).should eq flow
+  end
+
+  it "should handle initialization" do
+    crystal = <<-CRYSTAL
+    Foo.new("Pipe", "Dream")
+    CRYSTAL
+
+    flow = <<-FLOW
+    new Foo("Pipe", "Dream");
     FLOW
 
     Cr2flow.convert(crystal).should eq flow

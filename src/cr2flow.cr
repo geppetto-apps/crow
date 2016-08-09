@@ -64,6 +64,14 @@ module Cr2flow
       end
 
       method = "console.log" if method == "p"
+      if call.obj
+        if method == "new"
+          method = "#{method} #{call.obj}"
+        else
+          method = "#{call.obj}.#{method}"
+        end
+      end
+
       "#{method}(#{args.join(", ")});"
     end
   end
