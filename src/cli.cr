@@ -16,13 +16,13 @@ cli = Commander::Command.new do |cmd|
   cmd.run do |options, arguments|
     basename = nil
     input = if arguments.size == 0
-      STDIN.gets_to_end
-    else
-      input_path = arguments[0]
-      basename = File.basename(input_path).gsub(/\.[^.]+$/, "")
+              STDIN.gets_to_end
+            else
+              input_path = arguments[0]
+              basename = File.basename(input_path).gsub(/\.[^.]+$/, "")
 
-      File.read(input_path)
-    end
+              File.read(input_path)
+            end
     output = Cr2flow.convert(input)
 
     if basename
