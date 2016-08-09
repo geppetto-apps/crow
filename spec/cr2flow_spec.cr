@@ -13,7 +13,7 @@ describe Cr2flow do
     Cr2flow.convert(crystal).should eq flow
   end
 
-  it "should work with string assignment" do
+  it "should work with string assignment (const)" do
     crystal = <<-CRYSTAL
     text = "Hello World"
     p text
@@ -21,6 +21,24 @@ describe Cr2flow do
 
     flow = <<-FLOW
     const text = "Hello World";
+    console.log(text);
+    FLOW
+
+    Cr2flow.convert(crystal).should eq flow
+  end
+
+  it "should work with string assignment (var)" do
+    crystal = <<-CRYSTAL
+    text = "Hello"
+    text += " "
+    text += "World"
+    p text
+    CRYSTAL
+
+    flow = <<-FLOW
+    let text = "Hello";
+    text = text + " ";
+    text = text + "World";
     console.log(text);
     FLOW
 

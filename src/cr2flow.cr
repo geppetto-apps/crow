@@ -1,5 +1,5 @@
-require "./cr2flow/*"
 require "crystal/compiler/crystal/syntax.cr"
+require "./cr2flow/*"
 
 module Cr2flow
   def self.convert(crystal_source_code)
@@ -13,7 +13,7 @@ module Cr2flow
   end
 
   private def self.transpile(node : Crystal::Expressions)
-    node.expressions.map do |node|
+    apply_let_and_const(node.expressions).map do |node|
       transpile node
     end.join("\n")
   end
@@ -35,10 +35,15 @@ module Cr2flow
   end
 
   private def self.transpile(node : Crystal::Assign)
-    if node.target.to_s.starts_with? "@"
+    case node.target
+    when Crystal::InstanceVar
       "this." + transpile(node.to_s.sub(/^@/, "")) + ";"
-    else
+    when ConstVar
       "const " + transpile node.to_s + ";"
+    when LetVar
+      "let " + transpile node.to_s + ";"
+    else
+      transpile node.to_s + ";"
     end
   end
 
@@ -105,5 +110,40 @@ module Cr2flow
     end.join("\n")
 
     "\n#{indented_body}\n".gsub(/\A\s+\Z/, "")
+  end
+
+  private def self.apply_let_and_const(expressions : Array(Crystal::ASTNode))
+    defined = Hash(Crystal::ASTNode, Crystal::Assign).new
+    lets = [] of Crystal::Assign
+
+    expressions.each do |assign|
+      case assign
+      when Crystal::Assign
+        if defined[assign.target]?
+          lets << defined[assign.target]
+        else
+          defined[assign.target] = assign
+        end
+      end
+    end
+
+    lets.each do |let|
+      target = let.target
+      case target
+      when Crystal::Var
+        let.target = LetVar.new(target.name)
+        defined.delete target
+      end
+    end
+
+    defined.values.each do |const|
+      target = const.target
+      case target
+      when Crystal::Var
+        const.target = ConstVar.new(target.name)
+      end
+    end
+
+    expressions
   end
 end
