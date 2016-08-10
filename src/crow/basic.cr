@@ -1,15 +1,11 @@
 module Crow
   module Basic
-    private def transpile(content : String)
-      content
+    private def transpile(node : Crystal::ASTNode | String)
+      node.to_s
     end
 
     private def transpile(node : Crystal::NilLiteral)
       "undefined"
-    end
-
-    private def transpile(node : Crystal::ASTNode)
-      transpile node.to_s
     end
 
     private def transpile(node : Crystal::Assign)
