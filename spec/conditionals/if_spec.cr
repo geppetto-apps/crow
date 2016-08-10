@@ -57,5 +57,4 @@ describe Crow do
 
     Crow.convert(crystal).should eq flow
   end
-
 end
