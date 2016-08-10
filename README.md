@@ -49,10 +49,10 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] CharLiteral
 - [x] StringLiteral
 - [x] StringInterpolation
-- [ ] ArrayLiteral
-- [ ] HashLiteral
-- [ ] NamedTupleLiteral
 - [x] SymbolLiteral
+- [x] ArrayLiteral
+- [x] HashLiteral
+- [x] NamedTupleLiteral
 - [ ] RangeLiteral
 - [ ] RegexLiteral
 - [ ] TupleLiteral
@@ -60,8 +60,8 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] Block
 - [x] Call
 - [ ] NamedArgument
-- [ ] If
-- [ ] Unless
+- [x] If
+- [x] Unless
 - [ ] IfDef
 - [x] Assign
 - [ ] MultiAssign

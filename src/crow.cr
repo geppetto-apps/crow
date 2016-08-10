@@ -30,6 +30,88 @@ module Crow
     "Symbol.for('#{node.value}')"
   end
 
+  private def self.transpile(node : Crystal::ArrayLiteral)
+    elements = node.elements.map do |element|
+      transpile element
+    end.join(", ")
+
+    array_type = node.of
+    case array_type
+    when Crystal::Path
+      "[#{elements}]: #{transpile array_type}[]"
+    else
+      "[#{elements}]"
+    end
+  end
+
+  private def self.transpile(node : Crystal::HashLiteral)
+    entries = node.entries.map do |entry|
+      "\"#{transpile entry.key}\": #{transpile entry.value}"
+    end.join(", ")
+
+    hash_type = node.of
+    case hash_type
+    when Crystal::HashLiteral::Entry
+      "{#{entries}}: { [key: #{transpile hash_type.key}]: #{transpile hash_type.value} }"
+    else
+      "{#{entries}}"
+    end
+  end
+
+  private def self.transpile(node : Crystal::NamedTupleLiteral)
+    entries = node.entries.map do |entry|
+      "\"#{transpile entry.key}\": #{transpile entry.value}"
+    end.join(", ")
+
+    "{#{entries}}"
+  end
+
+  private def self.transpile(node : Crystal::Path)
+    case node.to_s
+    when "Int32"
+      "number"
+    when "String"
+      "string"
+    else
+      node.to_s
+    end
+  end
+
+  private def self.transpile(node : Crystal::If)
+    cond = transpile node.cond
+    case node
+    when Crystal::Unless
+      cond = "!#{cond}"
+    end
+
+    code = <<-JS
+    if (#{cond}) {#{format_body(node.then)}}
+    JS
+    case node.else
+    when Crystal::Nop
+    when Crystal::If
+      code += " else #{transpile(node.else)}"
+    else
+      code += " else {#{format_body(node.else)}}"
+    end
+    code
+  end
+
+  private def self.transpile(node : Crystal::Unless)
+    cond = transpile node.cond
+    cond = "!#{cond}"
+
+    code = <<-JS
+    if (#{cond}) {#{format_body(node.then)}}
+    JS
+    case node.else
+    when Crystal::Nop
+    else
+      code += " else {#{format_body(node.else)}}"
+    end
+    code
+  end
+
   private def self.transpile(node : Crystal::StringInterpolation)
     data = node.expressions.map do |node|
       case node
@@ -121,6 +203,10 @@ module Crow
     <<-JS
     #{name}(#{args.join(", ")}) {#{method_body}}
     JS
+  end
+
+  private def self.format_body(node : Crystal::ASTNode)
+    format_body transpile(node)
   end
 
   private def self.format_body(body)
