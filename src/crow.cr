@@ -1,7 +1,7 @@
 require "crystal/compiler/crystal/syntax.cr"
-require "./cr2flow/*"
+require "./crow/*"
 
-module Cr2flow
+module Crow
   def self.convert(crystal_source_code)
     parser = Crystal::Parser.new(crystal_source_code)
     node = Crystal::Expressions.from(parser.parse)

@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should work with hello world" do
     crystal = <<-CRYSTAL
     p "Hello World"
@@ -10,7 +10,7 @@ describe Cr2flow do
     console.log("Hello World");
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should work with string assignment (const)" do
@@ -24,7 +24,7 @@ describe Cr2flow do
     console.log(text);
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should work with string assignment (var)" do
@@ -42,7 +42,7 @@ describe Cr2flow do
     console.log(text);
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should work with concatenating strings" do
@@ -54,7 +54,7 @@ describe Cr2flow do
     console.log("Hello" + "World");
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should work with interpolated string" do
@@ -68,7 +68,7 @@ describe Cr2flow do
     console.log(`Hello ${who}`);
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should transpile arithmetic operations properly" do
@@ -80,6 +80,6 @@ describe Cr2flow do
     console.log((512 * 16) + 24 - 12);
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should be able to convert classes" do
     crystal = <<-CRYSTAL
     class Foo
@@ -17,7 +17,7 @@ describe Cr2flow do
     }
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should handle inheritance" do
@@ -30,7 +30,7 @@ describe Cr2flow do
     class Foo extends Bar {}
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should handle static functions" do
@@ -49,7 +49,7 @@ describe Cr2flow do
     Foo.pipe();
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 
   it "should handle initialization" do
@@ -61,6 +61,6 @@ describe Cr2flow do
     new Foo("Pipe", "Dream");
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

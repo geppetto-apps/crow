@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should convert char correctly" do
     crystal = <<-CR
       p 'h' + 'i'
@@ -9,6 +9,6 @@ describe Cr2flow do
     console.log('h' + 'i');
     JS
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

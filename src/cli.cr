@@ -1,8 +1,8 @@
 require "commander"
-require "./cr2flow.cr"
+require "./crow.cr"
 
 cli = Commander::Command.new do |cmd|
-  cmd.use = "cr2flow"
+  cmd.use = "crow"
   cmd.long = "Transpile Crystal to Flow (JS) code."
 
   cmd.flags.add do |flag|
@@ -23,7 +23,7 @@ cli = Commander::Command.new do |cmd|
 
               File.read(input_path)
             end
-    output = Cr2flow.convert(input)
+    output = Crow.convert(input)
 
     if basename
       output_path = "#{basename}.js.flow"

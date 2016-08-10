@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should convert symbols correctly" do
     crystal = <<-CR
       foo = :symbol
@@ -11,6 +11,6 @@ describe Cr2flow do
     const bar = Symbol.for('other_symbol');
     JS
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

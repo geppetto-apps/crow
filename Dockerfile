@@ -17,4 +17,4 @@ COPY bin ./bin/
 RUN crystal spec
 RUN bin/build
 
-ENTRYPOINT ["build/cr2flow"]
+ENTRYPOINT ["build/crow"]

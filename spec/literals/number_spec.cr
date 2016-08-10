@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should convert numbers correctly" do
     crystal = <<-CR
       p 125921
@@ -15,6 +15,6 @@ describe Cr2flow do
     console.log(-125.21);
     JS
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

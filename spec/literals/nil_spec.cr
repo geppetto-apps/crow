@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-describe Cr2flow do
+describe Crow do
   it "should convert nil to undefined" do
     crystal = <<-CRYSTAL
     nil
@@ -10,6 +10,6 @@ describe Cr2flow do
     undefined
     FLOW
 
-    Cr2flow.convert(crystal).should eq flow
+    Crow.convert(crystal).should eq flow
   end
 end

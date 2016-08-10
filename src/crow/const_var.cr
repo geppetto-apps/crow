@@ -1,4 +1,4 @@
-module Cr2flow
+module Crow
   class ConstVar < Crystal::Var
   end
 end

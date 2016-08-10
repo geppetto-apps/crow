@@ -1,2 +1,2 @@
 #!/bin/bash
-crystal build -obuild/cr2flow src/cli.cr
+crystal build -obuild/crow src/cli.cr
