@@ -5,7 +5,7 @@ require "compiler/crystal/syntax/parser.cr"
 require "./crow/*"
 
 module Crow
-  include Crow::Basic
+  include Crow::Core
   include Crow::Vars
   include Crow::Symbol
   include Crow::Literals

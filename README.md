@@ -58,8 +58,8 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] RangeLiteral
 - [ ] RegexLiteral
 - [ ] TupleLiteral
-- [ ] Var
-- [ ] Block
+- [x] Var
+- [x] Block
 - [x] Call
 - [ ] NamedArgument
 - [x] If
@@ -70,7 +70,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] InstanceVar
 - [ ] ReadInstanceVar
 - [ ] ClassVar
-- [ ] Global
+- [x] Global
 - [ ] BinaryOp
 - [ ] Arg
 - [ ] ProcNotation
