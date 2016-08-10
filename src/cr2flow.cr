@@ -22,6 +22,14 @@ module Cr2flow
     transpile node.to_s
   end
 
+  private def self.transpile(node : Crystal::NilLiteral)
+    "undefined"
+  end
+
+  private def self.transpile(node : Crystal::SymbolLiteral)
+    "Symbol.for('#{node.value}')"
+  end
+
   private def self.transpile(node : Crystal::StringInterpolation)
     data = node.expressions.map do |node|
       case node
