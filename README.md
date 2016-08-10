@@ -43,10 +43,10 @@ next to `cr2flow`.
 Extracted from [Crystal's compiler][cr-parser].
 
 - [x] Expressions
-- [ ] NilLiteral
-- [ ] BoolLiteral
-- [ ] NumberLiteral
-- [ ] CharLiteral
+- [x] NilLiteral
+- [x] BoolLiteral
+- [x] NumberLiteral
+- [x] CharLiteral
 - [x] StringLiteral
 - [x] StringInterpolation
 - [ ] SymbolLiteral
