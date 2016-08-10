@@ -35,16 +35,19 @@ module Cr2flow
   end
 
   private def self.transpile(node : Crystal::Assign)
-    case node.target
-    when Crystal::InstanceVar
-      "this." + transpile(node.to_s.sub(/^@/, "")) + ";"
-    when ConstVar
-      "const " + transpile node.to_s + ";"
-    when LetVar
-      "let " + transpile node.to_s + ";"
-    else
-      transpile node.to_s + ";"
-    end
+    "#{transpile node.target} = #{transpile node.value};"
+  end
+
+  private def self.transpile(node : Crystal::InstanceVar)
+    "this." + transpile(node.to_s.sub(/^@/, ""))
+  end
+
+  private def self.transpile(node : ConstVar)
+    "const " + transpile(node.to_s)
+  end
+
+  private def self.transpile(node : LetVar)
+    "let " + transpile(node.to_s)
   end
 
   private def self.transpile(call : Crystal::Call)
