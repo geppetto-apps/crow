@@ -49,10 +49,10 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] CharLiteral
 - [x] StringLiteral
 - [x] StringInterpolation
-- [ ] SymbolLiteral
 - [ ] ArrayLiteral
 - [ ] HashLiteral
 - [ ] NamedTupleLiteral
+- [x] SymbolLiteral
 - [ ] RangeLiteral
 - [ ] RegexLiteral
 - [ ] TupleLiteral
@@ -65,7 +65,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] IfDef
 - [x] Assign
 - [ ] MultiAssign
-- [ ] InstanceVar
+- [x] InstanceVar
 - [ ] ReadInstanceVar
 - [ ] ClassVar
 - [ ] Global
