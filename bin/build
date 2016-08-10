@@ -1,2 +1,2 @@
 #!/bin/bash
-crystal build -obuild/crow src/cli.cr
+crystal build -obuild/crow --release src/cli.cr
