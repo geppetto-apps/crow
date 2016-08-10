@@ -1,10 +1,6 @@
 name: crow
 version: 0.1.0
 
-dependencies:
-  crystal:
-    path: ../crystal
-
 development_dependencies:
   commander:
     github: mrrooijen/commander

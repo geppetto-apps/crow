@@ -1,4 +1,4 @@
-require "crystal/compiler/crystal/syntax.cr"
+require "compiler/crystal/syntax.cr"
 require "./crow/*"
 
 module Crow
