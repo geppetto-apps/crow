@@ -1,5 +1,9 @@
 module Crow
   module Literals
+    private def transpile(node : Crystal::NilLiteral)
+      "undefined"
+    end
+
     private def transpile(node : Crystal::ArrayLiteral)
       elements = node.elements.map do |element|
         transpile element

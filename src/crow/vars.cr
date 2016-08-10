@@ -2,6 +2,10 @@ require "./ast/*"
 
 module Crow
   module Vars
+    private def transpile(node : Crystal::Assign)
+      "#{transpile node.target} = #{transpile node.value};"
+    end
+
     private def transpile(node : AST::ConstVar)
       "const " + transpile(node.to_s)
     end
