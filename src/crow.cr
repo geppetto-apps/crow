@@ -1,4 +1,7 @@
-require "compiler/crystal/syntax.cr"
+require "compiler/crystal/syntax/virtual_file.cr"
+require "compiler/crystal/syntax/exception.cr"
+require "compiler/crystal/syntax/parser.cr"
+
 require "./crow/*"
 
 module Crow
