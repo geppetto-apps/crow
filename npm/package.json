@@ -1,0 +1,11 @@
+{
+  "name": "crow-cli",
+  "version": "0.1.0",
+  "description": "Transpile/compile Crystal to Flow",
+  "homepage": "https://github.com/geppetto-apps/crow",
+  "bugs": "https://github.com/geppetto-apps/crow/issues",
+  "bin": { "crow": "./crow" },
+  "files": ["crow"],
+  "author": "Theodor Tonum",
+  "license": "MIT"
+}

@@ -3,6 +3,7 @@
 /.crystal/
 /.shards/
 /build/
+/npm/crow
 
 
 # Libraries don't need dependency lock

@@ -1,2 +1,3 @@
 #!/bin/bash
 crystal build -obuild/crow --release src/cli.cr
+cp -f build/crow npm/crow

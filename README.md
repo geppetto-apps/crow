@@ -11,7 +11,9 @@ which may be transpiled to Javascript (via [Babel][babel]).
 
 ## Installation
 
-TODO: Publish with homebrew
+```
+npm install crow-cli -g
+```
 
 ## Usage
 
