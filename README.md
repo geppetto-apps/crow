@@ -97,7 +97,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] ProcLiteral
 - [ ] ProcPointer
 - [ ] Union
-- [ ] Self
+- [x] Self
 - [ ] ControlExpression
 - [ ] Yield
 - [ ] Include

@@ -15,7 +15,7 @@ module Crow
     end
 
     private def transpile(node : Crystal::InstanceVar)
-      "this." + transpile(node.to_s.sub(/^@/, ""))
+      "#{transpile Crystal::Self.new}." + transpile(node.to_s.sub(/^@/, ""))
     end
 
     private def transpile(node : Crystal::Global)
