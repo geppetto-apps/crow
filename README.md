@@ -55,6 +55,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] ArrayLiteral
 - [x] HashLiteral
 - [x] NamedTupleLiteral
+- [ ] ProcLiteral
 - [ ] RangeLiteral
 - [ ] RegexLiteral
 - [ ] TupleLiteral
@@ -85,8 +86,6 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] Case
 - [ ] ImplicitObj
 - [ ] Path
-- [x] ClassDef
-- [ ] ModuleDef
 - [ ] While
 - [ ] Until
 - [ ] Generic
@@ -94,7 +93,6 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] UninitializedVar
 - [ ] Rescue
 - [ ] ExceptionHandler
-- [ ] ProcLiteral
 - [ ] ProcPointer
 - [ ] Union
 - [x] Self
@@ -102,11 +100,13 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] Yield
 - [ ] Include
 - [ ] Extend
+- [ ] EnumDef
+- [x] ClassDef
+- [ ] ModuleDef
 - [ ] LibDef
 - [ ] FunDef
 - [ ] TypeDef
 - [ ] CStructOrUnionDef
-- [ ] EnumDef
 - [ ] ExternalVar
 - [ ] Alias
 - [ ] Metaclass
@@ -115,10 +115,10 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] TypeOf
 - [ ] Attribute
 - [ ] MacroExpression
-- [ ] MacroLiteral
 - [ ] MacroIf
 - [ ] MacroFor
 - [ ] MacroVar
+- [ ] MacroLiteral
 - [ ] Underscore
 - [ ] MagicConstant
 - [ ] Asm
