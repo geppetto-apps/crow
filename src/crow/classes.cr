@@ -6,6 +6,8 @@ module Crow
         "number"
       when "String"
         "string"
+      when "::Nil"
+        "void"
       else
         node.to_s
       end

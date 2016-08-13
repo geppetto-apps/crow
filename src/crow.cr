@@ -7,6 +7,7 @@ require "./crow/*"
 module Crow
   include Crow::Core
   include Crow::Vars
+  include Crow::Types
   include Crow::Symbol
   include Crow::Literals
   include Crow::Conditionals
