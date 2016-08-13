@@ -21,7 +21,19 @@ module Crow
     end
 
     private def transpile(node : Crystal::Self)
-      transpile "this"
+      "this"
+    end
+
+    private def transpile(node : Crystal::Nop)
+      ""
+    end
+
+    private def transpile(node : Crystal::Return)
+      if node.exp
+        "return #{transpile node.exp};"
+      else
+        "return;"
+      end
     end
 
     private def transpile(node : Crystal::ProcLiteral)

@@ -14,6 +14,10 @@ module Crow
       "let " + transpile(node.to_s)
     end
 
+    private def transpile(node : Crystal::Var)
+      node.to_s
+    end
+
     private def transpile(node : Crystal::InstanceVar)
       "#{transpile Crystal::Self.new}." + transpile(node.to_s.sub(/^@/, ""))
     end

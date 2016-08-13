@@ -4,6 +4,18 @@ module Crow
       "undefined"
     end
 
+    private def transpile(node : Crystal::BoolLiteral)
+      node.to_s
+    end
+
+    private def transpile(node : Crystal::NumberLiteral)
+      node.to_s
+    end
+
+    private def transpile(node : Crystal::StringLiteral)
+      node.to_s
+    end
+
     private def transpile(node : Crystal::ArrayLiteral)
       elements = transpile(node.elements).join(", ")
 
