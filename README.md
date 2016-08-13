@@ -74,7 +74,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] Global
 - [ ] BinaryOp
 - [ ] Arg
-- [ ] ProcNotation
+- [x] ProcNotation
 - [x] Def
 - [ ] Macro
 - [ ] UnaryExpression
@@ -108,7 +108,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] TypeDef
 - [ ] CStructOrUnionDef
 - [ ] ExternalVar
-- [ ] Alias
+- [x] Alias
 - [ ] Metaclass
 - [ ] Cast
 - [ ] NilableCast
