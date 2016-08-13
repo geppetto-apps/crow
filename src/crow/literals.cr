@@ -5,9 +5,7 @@ module Crow
     end
 
     private def transpile(node : Crystal::ArrayLiteral)
-      elements = node.elements.map do |element|
-        transpile element
-      end.join(", ")
+      elements = transpile(node.elements).join(", ")
 
       array_type = node.of
       case array_type
@@ -19,9 +17,7 @@ module Crow
     end
 
     private def transpile(node : Crystal::HashLiteral)
-      entries = node.entries.map do |entry|
-        "\"#{transpile entry.key}\": #{transpile entry.value}"
-      end.join(", ")
+      entries = transpile(node.entries).join(", ")
 
       hash_type = node.of
       case hash_type
@@ -30,6 +26,16 @@ module Crow
       else
         "{#{entries}}"
       end
+    end
+
+    private def transpile(entries : Array(Crystal::HashLiteral::Entry))
+      entries.map do |entry|
+        transpile entry
+      end
+    end
+
+    private def transpile(entry : Crystal::HashLiteral::Entry)
+      "\"#{transpile entry.key}\": #{transpile entry.value}"
     end
 
     private def transpile(node : Crystal::NamedTupleLiteral)

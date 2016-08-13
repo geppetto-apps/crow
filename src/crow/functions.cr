@@ -35,9 +35,7 @@ module Crow
       when "/"
         "#{call.obj} / #{call.args[0]}"
       else
-        args = call.args.map do |arg|
-          transpile arg
-        end
+        args = transpile call.args
 
         method = "console.log" if method == "p"
         if call.obj
