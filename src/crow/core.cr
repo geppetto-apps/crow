@@ -1,6 +1,11 @@
 module Crow
   module Core
-    private def transpile(node : Crystal::ASTNode | String)
+    private def transpile(node : String)
+      node
+    end
+
+    private def transpile(node : Crystal::ASTNode)
+      log_fallback_usage(node)
       node.to_s
     end
 
@@ -23,6 +28,10 @@ module Crow
       _def = node.def
       _def.name = ""
       transpile _def
+    end
+
+    private def log_fallback_usage(node)
+      logger.info "Using fallback for node with type #{node.class}."
     end
   end
 end
