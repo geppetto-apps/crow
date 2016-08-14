@@ -4,3 +4,6 @@ build:
     - crystal deps
     - crystal tool format --check src spec
     - crystal spec
+cache:
+  mount:
+    - .shards
