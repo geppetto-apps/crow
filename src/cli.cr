@@ -1,4 +1,6 @@
 require "commander"
+require "logger"
+
 require "./crow.cr"
 
 cli = Commander::Command.new do |cmd|
@@ -14,6 +16,7 @@ cli = Commander::Command.new do |cmd|
   end
 
   cmd.run do |options, arguments|
+    Crow.logger = Logger.new(STDERR)
     basename = nil
     input = if arguments.size == 0
               STDIN.gets_to_end

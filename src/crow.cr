@@ -31,4 +31,8 @@ module Crow
   def logger
     @@logger
   end
+
+  def logger=(logger)
+    @@logger = logger
+  end
 end
