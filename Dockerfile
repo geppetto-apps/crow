@@ -11,7 +11,9 @@ COPY shard.yml ./
 RUN shards install
 
 RUN mkdir build
+RUN mkdir npm
 COPY src ./src/
+COPY spec ./spec/
 COPY bin ./bin/
 
 RUN crystal spec
