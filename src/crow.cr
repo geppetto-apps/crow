@@ -21,6 +21,7 @@ module Crow
 
   @@logger = Logger.new(STDERR)
   @@logger.level = Logger::ERROR
+  @@strict = false
 
   def convert(crystal_source_code)
     parser = Crystal::Parser.new(crystal_source_code)
@@ -34,5 +35,18 @@ module Crow
 
   def logger=(logger)
     @@logger = logger
+  end
+
+  def strict=(strict)
+    @@strict = strict
+  end
+
+  def log_fallback_usage(node)
+    if @@strict
+      raise "Fallback is not allowed in strict mode. " \
+      "Attempted to transpile a node of type #{node.class}."
+    else
+      logger.info "Using fallback for node with type #{node.class}."
+    end
   end
 end
