@@ -41,9 +41,5 @@ module Crow
       _def.name = ""
       transpile _def
     end
-
-    private def log_fallback_usage(node)
-      logger.info "Using fallback for node with type #{node.class}."
-    end
   end
 end
