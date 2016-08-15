@@ -11,6 +11,14 @@ which may be transpiled to Javascript (via [Babel][babel]).
 
 ## Installation
 
+Via [Homebrew][brew]:
+
+```
+brew install geppetto-apps/bin/crow
+```
+
+Via [npm][npm]:
+
 ```
 npm install crow-cli -g
 ```
@@ -142,3 +150,5 @@ Extracted from [Crystal's compiler][cr-parser].
 [docker]: https://www.docker.com/
 [flow]: https://flowtype.org/
 [babel]: https://babeljs.io/
+[npm]: https://www.npmjs.com
+[brew]: http://brew.sh/
