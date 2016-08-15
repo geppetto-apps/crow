@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/geppetto-apps/crow">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>README - github.com/geppetto-apps/crow</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li class="current"><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent " data-id="github.com/geppetto-apps/crow/Crow" data-name="crow">
+      <a href="Crow.html">Crow</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/geppetto-apps/crow/Crow/AST" data-name="crow::ast">
+      <a href="Crow/AST.html">AST</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/AST/ConstVar" data-name="crow::ast::constvar">
+      <a href="Crow/AST/ConstVar.html">ConstVar</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/AST/LetVar" data-name="crow::ast::letvar">
+      <a href="Crow/AST/LetVar.html">LetVar</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Classes" data-name="crow::classes">
+      <a href="Crow/Classes.html">Classes</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Conditionals" data-name="crow::conditionals">
+      <a href="Crow/Conditionals.html">Conditionals</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Core" data-name="crow::core">
+      <a href="Crow/Core.html">Core</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/geppetto-apps/crow/Crow/Expressions" data-name="crow::expressions">
+      <a href="Crow/Expressions.html">Expressions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Expressions/Private" data-name="crow::expressions::private">
+      <a href="Crow/Expressions/Private.html">Private</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Formatting" data-name="crow::formatting">
+      <a href="Crow/Formatting.html">Formatting</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Functions" data-name="crow::functions">
+      <a href="Crow/Functions.html">Functions</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Literals" data-name="crow::literals">
+      <a href="Crow/Literals.html">Literals</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Symbol" data-name="crow::symbol">
+      <a href="Crow/Symbol.html">Symbol</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/TemplateString" data-name="crow::templatestring">
+      <a href="Crow/TemplateString.html">TemplateString</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Types" data-name="crow::types">
+      <a href="Crow/Types.html">Types</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/geppetto-apps/crow/Crow/Vars" data-name="crow::vars">
+      <a href="Crow/Vars.html">Vars</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<p><a href="http://ci.geppetto.no/geppetto-apps/crow" target="_blank"><img src="http://ci.geppetto.no/api/badges/geppetto-apps/crow/status.svg" alt="Build Status"/></a>
+<a href="https://shards.rocks/github/geppetto-apps/crow" target="_blank"><img src="https://shards.rocks/badge/github/geppetto-apps/crow/status.svg" alt="Dependency Status"/></a>
+<a href="https://shards.rocks/github/geppetto-apps/crow" target="_blank"><img src="https://shards.rocks/badge/github/geppetto-apps/crow/dev_status.svg" alt="devDependency Status"/></a></p>
+
+<h1>crow</h1>
+
+<p><code>crow</code> transpiles [Crystal][cr] source code to valid [Flow][flow]/ES2015/JavaScript).</p>
+
+<p>Code that is transpiled to valid Flow syntax may be transpiled to valid ES2015,
+which may be transpiled to Javascript (via [Babel][babel]).</p>
+
+<h2>Installation</h2>
+
+<pre><code>npm install crow<span class="o">-</span>cli <span class="o">-</span>g</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class='language-sh'># Compiles and outputs to foo.js.flow
+$ crow foo.cr
+
+# Same as above
+$ cat foo.cr | crow > foo.js.flow
+
+# Compile to JavaScript (via Babel)
+$ npm install babel-preset-es2015 babel-plugin-transform-flow-strip-types
+$ crow foo.cr |  babel --plugins transform-flow-strip-types --presets es2015</code></pre>
+
+<p>You can also use [Docker][docker]:</p>
+
+<pre><code class='language-sh'>$ cat foo.cr | docker run -i geppetto-apps/crow > foo.js.flow</code></pre>
+
+<h2>Development</h2>
+
+<p>You need to have a copy of the [Crystal source code][cr-src] sitting in a directory
+next to <code>crow</code>.</p>
+
+<h2>Supported AST nodes</h2>
+
+<p>Extracted from [Crystal's compiler][cr-parser].</p>
+
+<ul><li>[x] Expressions</li><li>[x] NilLiteral</li><li>[x] BoolLiteral</li><li>[x] NumberLiteral</li><li>[x] CharLiteral</li><li>[x] StringLiteral</li><li>[x] StringInterpolation</li><li>[x] SymbolLiteral</li><li>[x] ArrayLiteral</li><li>[x] HashLiteral</li><li>[x] NamedTupleLiteral</li><li>[ ] ProcLiteral</li><li>[ ] RangeLiteral</li><li>[ ] RegexLiteral</li><li>[ ] TupleLiteral</li><li>[x] Var</li><li>[x] Block</li><li>[x] Call</li><li>[ ] NamedArgument</li><li>[x] If</li><li>[x] Unless</li><li>[ ] IfDef</li><li>[x] Assign</li><li>[ ] MultiAssign</li><li>[x] InstanceVar</li><li>[ ] ReadInstanceVar</li><li>[ ] ClassVar</li><li>[x] Global</li><li>[ ] BinaryOp</li><li>[ ] Arg</li><li>[x] ProcNotation</li><li>[x] Def</li><li>[ ] Macro</li><li>[ ] UnaryExpression</li><li>[ ] VisibilityModifier</li><li>[ ] IsA</li><li>[ ] RespondsTo</li><li>[ ] Require</li><li>[ ] When</li><li>[ ] Case</li><li>[ ] ImplicitObj</li><li>[ ] Path</li><li>[ ] While</li><li>[ ] Until</li><li>[ ] Generic</li><li>[ ] TypeDeclaration</li><li>[ ] UninitializedVar</li><li>[ ] Rescue</li><li>[ ] ExceptionHandler</li><li>[ ] ProcPointer</li><li>[ ] Union</li><li>[x] Self</li><li>[ ] ControlExpression</li><li>[ ] Yield</li><li>[ ] Include</li><li>[ ] Extend</li><li>[ ] EnumDef</li><li>[x] ClassDef</li><li>[ ] ModuleDef</li><li>[ ] LibDef</li><li>[ ] FunDef</li><li>[ ] TypeDef</li><li>[ ] CStructOrUnionDef</li><li>[ ] ExternalVar</li><li>[x] Alias</li><li>[ ] Metaclass</li><li>[ ] Cast</li><li>[ ] NilableCast</li><li>[ ] TypeOf</li><li>[ ] Attribute</li><li>[ ] MacroExpression</li><li>[ ] MacroIf</li><li>[ ] MacroFor</li><li>[ ] MacroVar</li><li>[ ] MacroLiteral</li><li>[ ] Underscore</li><li>[ ] MagicConstant</li><li>[ ] Asm</li><li>[ ] AsmOperand</li></ul>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it ( https://github.com/geppetto-apps/crow/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/theodorton" target="_blank">theodorton</a> Theodor Tonum - creator, maintainer</li></ul>
+
+<p>[cr]: https://crystal-lang.org/
+[cr-src]: https://github.com/crystal-lang/crystal
+[cr-syntax]: https://github.com/crystal-lang/crystal/blob/master/src/compiler/crystal/syntax/ast.cr
+[docker]: https://www.docker.com/
+[flow]: https://flowtype.org/
+[babel]: https://babeljs.io/</p>
+</div>
+</body>
+</html>
