@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+crystal doc
+git checkout gh-pages
+cp -r doc/* ./
+git add .
+git commit -m 'Update docs'
+git push
+git checkout master
