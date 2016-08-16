@@ -99,8 +99,8 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] Generic
 - [ ] TypeDeclaration
 - [ ] UninitializedVar
-- [ ] Rescue
-- [ ] ExceptionHandler
+- [x] Rescue
+- [x] ExceptionHandler
 - [ ] ProcPointer
 - [ ] Union
 - [x] Self

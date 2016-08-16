@@ -38,6 +38,8 @@ module Crow
         args = transpile call.args
 
         method = "console.log" if method == "p"
+        method = "throw new Error" if method == "raise"
+
         if call.obj
           if method == "new"
             method = "#{method} #{call.obj}"
