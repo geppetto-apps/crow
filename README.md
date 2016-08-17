@@ -34,7 +34,7 @@ $ cat foo.cr | crow > foo.js.flow
 
 # Compile to JavaScript (via Babel)
 $ npm install babel-preset-es2015 babel-plugin-transform-flow-strip-types
-$ crow foo.cr |  babel --plugins transform-flow-strip-types --presets es2015
+$ cat foo.cr | crow | babel --plugins transform-flow-strip-types --presets es2015
 ```
 
 You can also use [Docker][docker]:
