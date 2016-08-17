@@ -9,6 +9,10 @@
 Code that is transpiled to valid Flow syntax may be transpiled to valid ES2015,
 which may be transpiled to Javascript (via [Babel][babel]).
 
+## Warning: Experimental
+
+This project is in alpha stage and should be considered highly experimental.
+
 ## Installation
 
 Via [Homebrew][brew]:
