@@ -15,6 +15,7 @@ module Crow
   include Crow::Expressions
   include Crow::TemplateString
   include Crow::Functions
+  include Crow::Exceptions
   include Crow::Classes
   include Crow::Formatting
   extend self
