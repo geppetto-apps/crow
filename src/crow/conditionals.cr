@@ -47,8 +47,8 @@ module Crow
 
         "switch (#{transpile(node_cond)}) {\n#{code}}"
       else
-        raise "Case statements without conditions cannot be transpiled." \
-        "See https://github.com/geppetto-apps/crow/issues/8/"
+        raise "Case statements without conditions cannot be transpiled. \
+               See https://github.com/geppetto-apps/crow/issues/8/"
       end
     end
 

@@ -44,8 +44,8 @@ module Crow
 
   def log_fallback_usage(node)
     if @@strict
-      raise "Fallback is not allowed in strict mode. " \
-      "Attempted to transpile a node of type #{node.class}."
+      raise "Fallback is not allowed in strict mode. \
+             Attempted to transpile a node of type #{node.class}."
     else
       logger.info "Using fallback for node with type #{node.class}."
     end
