@@ -94,8 +94,8 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] IsA
 - [ ] RespondsTo
 - [ ] Require
-- [ ] When
-- [ ] Case
+- [x] When
+- [x] Case
 - [ ] ImplicitObj
 - [ ] Path
 - [ ] While
