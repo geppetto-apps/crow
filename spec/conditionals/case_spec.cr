@@ -32,6 +32,32 @@ describe Crow do
     Crow.convert(crystal).should eq flow
   end
 
+  it "should support case statements without default" do
+    crystal = <<-CR
+    value = "foo"
+    case value
+    when "foo"
+      p "yes"
+    when "bar"
+      p "no"
+    end
+    CR
+
+    flow = <<-JS
+    const value = "foo";
+    switch (value) {
+    case "foo":
+      console.log("yes");
+      break;
+    case "bar":
+      console.log("no");
+      break;
+    }
+    JS
+
+    Crow.convert(crystal).should eq flow
+  end
+
   it "should raise an exception when conditionless case statements are found" do
     crystal = <<-CR
     case
