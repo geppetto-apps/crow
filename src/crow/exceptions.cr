@@ -46,7 +46,8 @@ module Crow
       case node_types
       when Array(Crystal::ASTNode)
         types_condition = node_types.map do |type|
-          "e instanceof #{transpile type}"
+          is_a = Crystal::IsA.new(Crystal::Var.new("e"), type)
+          transpile(is_a)
         end.join(" || ")
         "if (#{types_condition}) {#{format_body(transpiled_body)}}"
       else

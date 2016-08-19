@@ -27,5 +27,9 @@ module Crow
 
       "(#{inputs.join(", ")}): #{transpile node.output}"
     end
+
+    private def transpile(node : Crystal::IsA)
+      "#{transpile(node.obj)} instanceof #{transpile(node.const)}"
+    end
   end
 end

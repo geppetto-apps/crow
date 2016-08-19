@@ -91,7 +91,7 @@ Extracted from [Crystal's compiler][cr-parser].
 - [ ] Macro
 - [ ] UnaryExpression
 - [ ] VisibilityModifier
-- [ ] IsA
+- [x] IsA
 - [ ] RespondsTo
 - [ ] Require
 - [x] When
