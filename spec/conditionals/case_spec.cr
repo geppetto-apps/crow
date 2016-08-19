@@ -58,6 +58,33 @@ describe Crow do
     Crow.convert(crystal).should eq flow
   end
 
+  it "should convert case statements comparing types to if statements" do
+    crystal = <<-CR
+    value = "foo"
+    case value
+    when Foo
+      p "yes"
+    when Bar
+      p "no"
+    else
+      p "hiyaa"
+    end
+    CR
+
+    flow = <<-JS
+    const value = "foo";
+    if (value instanceof Foo) {
+      console.log("yes");
+    } else if (value instanceof Bar) {
+      console.log("no");
+    } else {
+      console.log("hiyaa");
+    }
+    JS
+
+    Crow.convert(crystal).should eq flow
+  end
+
   it "should raise an exception when conditionless case statements are found" do
     crystal = <<-CR
     case
