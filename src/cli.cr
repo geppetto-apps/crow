@@ -8,11 +8,11 @@ cli = Commander::Command.new do |cmd|
   cmd.long = "Transpile Crystal to Flow (JS) code."
 
   cmd.flags.add do |flag|
-    flag.name = "verbose"
+    flag.name = "version"
     flag.short = "-v"
-    flag.long = "--verbose"
+    flag.long = "--version"
     flag.default = false
-    flag.description = "Enable more verbose logging."
+    flag.description = "Print version number and exit"
   end
 
   cmd.flags.add do |flag|
@@ -23,6 +23,11 @@ cli = Commander::Command.new do |cmd|
   end
 
   cmd.run do |options, arguments|
+    if options.bool["version"]
+      STDOUT.puts "Crow v#{Crow::VERSION}"
+      next
+    end
+
     Crow.logger = Logger.new(STDERR)
     Crow.strict = options.bool["strict"] && !options.bool["no-strict"]
 
