@@ -1,6 +1,6 @@
 {
   "name": "crow-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Transpile/compile Crystal to Flow",
   "homepage": "https://github.com/geppetto-apps/crow",
   "bugs": "https://github.com/geppetto-apps/crow/issues",
