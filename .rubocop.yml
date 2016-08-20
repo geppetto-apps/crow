@@ -1,3 +1,4 @@
 AllCops:
   Exclude:
     - '**/*.cr'
+    - 'examples/**/*.md'
