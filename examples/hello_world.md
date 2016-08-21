@@ -1,6 +1,6 @@
 # Hello World
 
-```rb
+```crystal
 p "Hello World"
 ```
 
@@ -10,7 +10,7 @@ console.log("Hello World");
 
 # String assignment
 
-```rb
+```crystal
 text = "Hello World"
 p text
 ```
@@ -22,7 +22,7 @@ console.log(text);
 
 # String assignment (var)
 
-```rb
+```crystal
 text = "Hello"
 text += " "
 text += "World"
@@ -38,7 +38,7 @@ console.log(text);
 
 # Concatenating strings
 
-```rb
+```crystal
 p "Hello" + "World"
 ```
 
@@ -48,7 +48,7 @@ console.log("Hello" + "World");
 
 # Interpolated string
 
-```rb
+```crystal
 who = "World"
 p "Hello #{who}"
 ```
@@ -61,7 +61,7 @@ console.log(`Hello ${who}`);
 # Arithmetic operations
 <!-- TODO: Move this -->
 
-```rb
+```crystal
 p 512 * 16 + 24 - 12
 ```
 

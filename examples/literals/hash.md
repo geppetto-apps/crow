@@ -1,6 +1,6 @@
 # Hashes
 
-```rb
+```crystal
 {} of String => Int32
 ```
 
@@ -10,7 +10,7 @@
 
 # Convert hashes with contents (inferred type)
 
-```rb
+```crystal
 {
   class: Class,
   bar: "foo",

@@ -1,6 +1,6 @@
 # Convert chars
 
-```rb
+```crystal
 p 'h' + 'i'
 ```
 

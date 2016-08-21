@@ -1,6 +1,6 @@
 # Begin/rescue blocks
 
-```rb
+```crystal
 begin
   raise "This is an exception."
 rescue e
@@ -18,7 +18,7 @@ try {
 
 # Keep named exception vars
 
-```rb
+```crystal
 begin
   raise "This is an exception."
 rescue ex
@@ -37,7 +37,7 @@ try {
 
 # Ensure/finally
 
-```rb
+```crystal
 begin
   raise "This is an exception."
 rescue e
@@ -59,7 +59,7 @@ try {
 
 # Specific exception handlers
 
-```rb
+```crystal
 begin
   function_accessing_array()
 rescue iex : IndexError

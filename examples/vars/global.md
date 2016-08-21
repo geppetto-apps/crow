@@ -1,6 +1,6 @@
 # Global variables
 
-```rb
+```crystal
 $foo = "bar"
 ```
 

@@ -1,6 +1,6 @@
 # Typed arrays
 
-```rb
+```crystal
 [] of String
 ```
 
@@ -10,7 +10,7 @@
 
 # Dynamic arrays
 
-```rb
+```crystal
 [Class, "foo", 1]
 ```
 

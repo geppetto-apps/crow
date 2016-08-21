@@ -1,6 +1,6 @@
 # convert simple case statements
 
-```rb
+```crystal
 value = "foo"
 case value
 when "foo"
@@ -29,7 +29,7 @@ default:
 
 # Case statements without default
 
-```rb
+```crystal
 value = "foo"
 case value
 when "foo"
@@ -53,7 +53,7 @@ case "bar":
 
 # Case statements comparing types to if statements
 
-```rb
+```crystal
 value = "foo"
 case value
 when Foo

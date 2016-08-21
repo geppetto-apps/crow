@@ -1,6 +1,6 @@
 # If statements
 
-```rb
+```crystal
 if true
   p "yes"
 end
@@ -14,7 +14,7 @@ if (true) {
 
 # If and else
 
-```rb
+```crystal
 if true
   p "yes"
 else
@@ -32,7 +32,7 @@ if (true) {
 
 # Elsif and else
 
-```rb
+```crystal
 if true
   p "yes"
 elsif false

@@ -1,6 +1,6 @@
 # Nil
 
-```rb
+```crystal
 nil
 ```
 

@@ -1,6 +1,6 @@
 # Named blocks
 
-```rb
+```crystal
 fn = -> {
   p "This is a block"
 }

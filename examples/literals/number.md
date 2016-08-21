@@ -1,6 +1,6 @@
 # Numbers
 
-```rb
+```crystal
 p 125921
 p 125921.25
 p -125

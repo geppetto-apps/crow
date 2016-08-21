@@ -1,6 +1,6 @@
 # True
 
-```rb
+```crystal
 true
 ```
 
@@ -10,7 +10,7 @@ true
 
 # False
 
-```rb
+```crystal
 false
 ```
 

@@ -20,7 +20,7 @@ class Markdown
 
     def begin_code(language)
       case language
-      when "rb"
+      when "crystal"
         @state = "crystal_example"
         @crystal_example = ""
       when "js"

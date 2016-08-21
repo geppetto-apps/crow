@@ -1,6 +1,6 @@
 # convert normal unless
 
-```rb
+```crystal
 unless true
   p "yes"
 end
@@ -14,7 +14,7 @@ if (!true) {
 
 # convert unless and else
 
-```rb
+```crystal
 unless true
   p "yes"
 else

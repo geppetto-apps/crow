@@ -1,6 +1,6 @@
 # Symbols
 
-```rb
+```crystal
 foo = :symbol
 bar = :other_symbol
 ```

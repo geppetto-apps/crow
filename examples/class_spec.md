@@ -1,6 +1,6 @@
 # Converting classes
 
-```rb
+```crystal
 class Foo
   def initialize(@label : String)
   end
@@ -17,7 +17,7 @@ class Foo {
 
 # Class Inheritance
 
-```rb
+```crystal
 class Foo < Bar
 end
 ```
@@ -28,7 +28,7 @@ class Foo extends Bar {}
 
 # Class static functions
 
-```rb
+```crystal
 class Foo < Bar
   def self.pipe
   end
@@ -45,7 +45,7 @@ Foo.pipe();
 
 # Class initialization
 
-```rb
+```crystal
 Foo.new("Pipe", "Dream")
 ```
 

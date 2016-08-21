@@ -1,6 +1,6 @@
 # Type aliases
 
-```rb
+```crystal
 alias MyNumber = Int32
 ```
 
@@ -10,7 +10,7 @@ type MyNumber = number;
 
 # Nilable type aliases
 
-```rb
+```crystal
 alias MyNumber = Int32?
 ```
 
@@ -22,7 +22,7 @@ type MyNumber = number | void;
 
 # Union types
 
-```rb
+```crystal
 alias MyType = Int32 | String
 ```
 
@@ -32,7 +32,7 @@ type MyType = number | string;
 
 # Typed arrays
 
-```rb
+```crystal
 alias MyArrayType = Array(String)
 ```
 
@@ -42,7 +42,7 @@ type MyArrayType = string[];
 
 # Parametric types
 
-```rb
+```crystal
 alias MyType = Foo(Bar)
 ```
 
@@ -52,7 +52,7 @@ type MyType = Foo<Bar>;
 
 # Tuple type definitions
 
-```rb
+```crystal
 alias MyType = {Foo, Bar, Pipe}
 ```
 
@@ -62,7 +62,7 @@ type MyType = [Foo, Bar, Pipe];
 
 # Proc type definitions
 
-```rb
+```crystal
 alias FnType = Int32 -> String
 ```
 
