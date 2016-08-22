@@ -29,7 +29,7 @@ cli = Commander::Command.new do |cmd|
     end
 
     Crow.logger = Logger.new(STDERR)
-    Crow.strict = options.bool["strict"] && !options.bool["no-strict"]
+    Crow.strict = !options.bool["no-strict"]
 
     basename = nil
     input = if arguments.size == 0
