@@ -1,0 +1,2 @@
+require "markdown"
+require "./markdown/*"
