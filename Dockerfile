@@ -14,6 +14,7 @@ RUN mkdir build
 RUN mkdir npm
 COPY src ./src/
 COPY spec ./spec/
+COPY examples ./examples/
 COPY bin ./bin/
 
 RUN crystal spec
