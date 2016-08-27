@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+Nothing yet.
+
+## [0.3.0] - 2015-08-27
 ### Added
 - Version flag (-v) to CLI
 - Examples in markdown (also acts as tests)
@@ -42,5 +45,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Transpile typed arrays
 - Transpile hash to object
 
-[Unreleased]: https://github.com/geppetto-apps/crow/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/geppetto-apps/crow/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/geppetto-apps/crow/compare/v0.3.0...v0.3.0
 [0.2.0]: https://github.com/geppetto-apps/crow/compare/v0.1.0...v0.2.0
