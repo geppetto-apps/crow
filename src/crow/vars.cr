@@ -22,10 +22,6 @@ module Crow
       "#{transpile Crystal::Self.new}." + transpile(node.to_s.sub(/^@/, ""))
     end
 
-    private def transpile(node : Crystal::Global)
-      "global." + transpile(node.to_s.sub(/^\$/, ""))
-    end
-
     private def assign(target, value)
       "#{transpile target} = #{transpile value};"
     end
