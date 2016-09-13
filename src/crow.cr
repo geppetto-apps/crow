@@ -17,6 +17,7 @@ module Crow
   include Crow::Functions
   include Crow::Exceptions
   include Crow::Classes
+  include Crow::Modules
   include Crow::Formatting
   extend self
 
