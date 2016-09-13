@@ -18,6 +18,10 @@ module Crow
 
       method_body = format_body(transpile(method.body))
 
+      if @@class_stack == 0
+        name = "function #{name}"
+      end
+
       <<-JS
       #{name}(#{args.join(", ")}) {#{method_body}}
       JS
