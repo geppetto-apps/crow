@@ -34,6 +34,11 @@ module Crow
 
     private def transpile(call : Crystal::Call)
       method = call.name
+
+      if @@macros[call.name]?
+        return transpile_macro(call, @@macros[call.name])
+      end
+
       case call.name
       when "+"
         "#{call.obj} + #{call.args[0]}"
