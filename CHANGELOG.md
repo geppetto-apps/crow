@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-Nothing yet.
+- Removed support for global variables (dropped from Crystal)
 
 ## [0.3.0] - 2015-08-27
 ### Added

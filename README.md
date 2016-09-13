@@ -83,7 +83,6 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] InstanceVar
 - [ ] ReadInstanceVar
 - [ ] ClassVar
-- [x] Global
 - [ ] BinaryOp
 - [ ] Arg
 - [x] ProcNotation
