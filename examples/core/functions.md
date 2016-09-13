@@ -8,6 +8,6 @@ end
 
 ```js
 function greet() {
-  console.log("Hello world");
+  return console.log("Hello world");
 }
 ```
