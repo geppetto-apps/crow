@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 - Removed support for global variables (dropped from Crystal)
+- Properly transpile functions defined outside a class
 
 ## [0.3.0] - 2015-08-27
 ### Added
