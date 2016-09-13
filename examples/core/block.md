@@ -8,6 +8,6 @@ fn = -> {
 
 ```js
 function fn() {
-  console.log("This is a block");
+  return console.log("This is a block");
 };
 ```
