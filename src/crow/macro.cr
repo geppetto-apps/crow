@@ -1,4 +1,3 @@
-
 module Crow
   module Macros
     @@macros = Hash(String, Crystal::Macro).new
@@ -16,8 +15,6 @@ module Crow
       rendered = mac.body.as(Crystal::Expressions).expressions.map do |node|
         transpile(node)
       end.join("")
-
-
 
       mac.args.each_with_index do |arg, index|
         rendered = rendered.gsub("{{ #{arg.name} }}", call.args[index])
