@@ -27,7 +27,9 @@ module Crow
     end
 
     private def assign(target, value : Crystal::ProcLiteral)
-      "function #{transpile target}#{transpile value};"
+      _def = value.def.clone
+      _def.name = transpile(target)
+      "#{transpile _def};"
     end
   end
 end

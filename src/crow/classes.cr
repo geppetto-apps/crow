@@ -1,5 +1,7 @@
 module Crow
   module Classes
+    @@class_stack = 0
+
     private def transpile(node : Crystal::Path)
       case node.to_s
       when "Int32"
@@ -19,7 +21,9 @@ module Crow
         class_name += " extends #{klass.superclass.to_s}"
       end
 
+      @@class_stack += 1
       class_body = format_body(transpile(klass.body))
+      @@class_stack -= 1
 
       <<-JS
       class #{class_name} {#{class_body}}
