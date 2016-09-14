@@ -145,6 +145,10 @@ Extracted from [Crystal's compiler][cr-parser].
 4. Push to the branch (git push origin my-new-feature)
 5. Create a new Pull Request
 
+## Attribution
+
+Logo: [Crow by Encrico Francese][crow-flickr]
+
 ## Contributors
 
 - [theodorton](https://github.com/theodorton) Theodor Tonum - creator, maintainer
@@ -157,3 +161,4 @@ Extracted from [Crystal's compiler][cr-parser].
 [babel]: https://babeljs.io/
 [npm]: https://www.npmjs.com
 [brew]: http://brew.sh/
+[crow-flickr]: https://www.flickr.com/photos/remanufactory/5553711670
