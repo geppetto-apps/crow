@@ -1,8 +1,10 @@
+# [![Crow](logo.png)](https://github.com/geppetto-apps/crow)
+
+<hr />
+ 
 [![Build Status](http://ci.geppetto.no/api/badges/geppetto-apps/crow/status.svg)](http://ci.geppetto.no/geppetto-apps/crow)
 [![Dependency Status](https://shards.rocks/badge/github/geppetto-apps/crow/status.svg)](https://shards.rocks/github/geppetto-apps/crow)
 [![devDependency Status](https://shards.rocks/badge/github/geppetto-apps/crow/dev_status.svg)](https://shards.rocks/github/geppetto-apps/crow)
-
-<img src="https://raw.githubusercontent.com/geppetto-apps/crow/master/logo.png" />
 
 # crow
 
