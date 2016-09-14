@@ -4,7 +4,7 @@ module Crow
       format_body transpile(node)
     end
 
-    def format_body(body : String)
+    private def format_body(body : String)
       indented_body = body.split("\n").map do |line|
         "  #{line}"
       end.join("\n")

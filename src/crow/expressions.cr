@@ -8,7 +8,7 @@ module Crow
       end.join("\n")
     end
 
-    module Private
+    private module Private
       def self.apply_let_and_const(expressions : Array(Crystal::ASTNode))
         defined = Hash(Crystal::ASTNode, Crystal::Assign).new
         lets = [] of Crystal::Assign
