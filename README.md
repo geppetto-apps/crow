@@ -2,6 +2,8 @@
 [![Dependency Status](https://shards.rocks/badge/github/geppetto-apps/crow/status.svg)](https://shards.rocks/github/geppetto-apps/crow)
 [![devDependency Status](https://shards.rocks/badge/github/geppetto-apps/crow/dev_status.svg)](https://shards.rocks/github/geppetto-apps/crow)
 
+<img src="https://raw.githubusercontent.com/geppetto-apps/crow/master/logo.png" />
+
 # crow
 
 `crow` transpiles [Crystal][cr] source code to valid [Flow][flow]/ES2015/JavaScript).
