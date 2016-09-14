@@ -54,6 +54,30 @@ $ cat foo.cr | docker run -i geppetto-apps/crow > foo.js.flow
 You need to have a copy of the [Crystal source code][cr-src] sitting in a directory
 next to `crow`.
 
+## Motivation & Goal
+
+This is both my first Crystal and first compiler project. I was inspired to learn
+more about compilers after reading [Game Programming Patterns' chapter on bytecode][gpp-bytecode]
+and also Crystal and its relationship with LLVM. Since Crystal is a high-level,
+self-hosted programming language, it's very easy to work with Crystal's internals.
+In addition to attempting make Crystal target the web, I've learned a lot about
+Crystal from working on this project.
+
+The goal of this project is to make it possible to write both frontend and backend
+code for a web project in Crystal; preferably in a way that allows for communication
+between native JS and native Crystal code. @asterite from the Crystal Team has
+noted that [crystal is not geared against the web](https://github.com/crystal-lang/crystal/issues/829#issuecomment-113955554)
+and there's stille work left to [make Crystal to work with asm.js][asm-issue].
+Due to this `crow` currently approach the problem by using transpilation, but that
+may not be the case forever. The only public API for `crow` is the CLI that takes
+in some Crystal code and spits out something may run in the browser.
+
+Milestones:
+
+- [ ] Run Crystal code in isolation in the browser
+- [ ] Call transpiled Crystal code from Javascript
+- [ ] Call Javascript from Crystal code
+
 ## Supported AST nodes
 
 Extracted from [Crystal's compiler][cr-parser].
@@ -162,3 +186,5 @@ Logo: [Crow by Encrico Francese][crow-flickr]
 [npm]: https://www.npmjs.com
 [brew]: http://brew.sh/
 [crow-flickr]: https://www.flickr.com/photos/remanufactory/5553711670
+[gpp-bytecode]: http://gameprogrammingpatterns.com/bytecode.html
+[asm-issue]: https://github.com/crystal-lang/crystal/issues/535
