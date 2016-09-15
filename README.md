@@ -49,11 +49,6 @@ You can also use [Docker][docker]:
 $ cat foo.cr | docker run -i geppetto-apps/crow > foo.js.flow
 ```
 
-## Development
-
-You need to have a copy of the [Crystal source code][cr-src] sitting in a directory
-next to `crow`.
-
 ## Motivation & Goal
 
 This is both my first Crystal and first compiler project. I was inspired to learn
