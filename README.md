@@ -46,7 +46,7 @@ $ cat foo.cr | crow | babel --plugins transform-flow-strip-types --presets es201
 You can also use [Docker][docker]:
 
 ```sh
-$ cat foo.cr | docker run -i geppetto-apps/crow > foo.js.flow
+$ cat foo.cr | docker run -i geppettoapps/crow > foo.js.flow
 ```
 
 ## Motivation & Goal
