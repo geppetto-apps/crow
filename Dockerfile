@@ -1,8 +1,6 @@
-FROM geppettoapps/crystal-libxml2:0.18.7
+FROM geppettoapps/crystal-libxml2:0.20.5
 MAINTAINER Theodor Tonum <theodor@tonum.no>
-ENV REFRESHED_AT 2016-08-05
-
-RUN git clone https://github.com/crystal-lang/crystal.git /crystal
+ENV REFRESHED_AT 2017-02-11
 
 RUN mkdir /app
 WORKDIR /app

@@ -2,7 +2,7 @@ require "./spec_helper"
 
 describe Crow do
   it "should log fallback usage" do
-    io = MemoryIO.new
+    io = IO::Memory.new
     Crow.logger = Logger.new(io)
     Crow.log_fallback_usage Crystal::Var.new("foo")
     io.to_s.should match /Using fallback for node with type Crystal::Var/

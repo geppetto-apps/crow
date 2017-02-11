@@ -15,6 +15,10 @@ module Crow
 
         expressions.each do |assign|
           case assign
+          when Crystal::OpAssign
+            if other_assign = defined[assign.target]?
+              lets << defined[assign.target]
+            end
           when Crystal::Assign
             if defined[assign.target]?
               lets << defined[assign.target]

@@ -1,5 +1,5 @@
 .git
 .shards
 build
-libs
+lib
 shard.lock

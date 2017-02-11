@@ -6,6 +6,11 @@ module Crow
       assign(node.target, node.value)
     end
 
+    private def transpile(node : Crystal::OpAssign)
+      value = Crystal::Call.new(node.target, node.op, node.value)
+      transpile Crystal::Assign.new(node.target, value)
+    end
+
     private def transpile(node : AST::ConstVar)
       "const " + transpile(node.to_s)
     end
