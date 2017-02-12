@@ -37,7 +37,7 @@ module Crow
 
       if @@macros[call.name]?
         return transpile_macro(call, @@macros[call.name])
-      elsif @@vars.includes? call.name.to_s
+      elsif call.obj.nil? && @@vars.includes? call.name.to_s
         return call.name
       end
 

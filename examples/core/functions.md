@@ -29,3 +29,32 @@ function greet() {
 }
 greet();
 ```
+
+# It can handle scopes correctly
+
+```crystal
+
+greeting = "Hello world"
+
+class Greeter
+  def greeting
+    "Hello world"
+  end
+end
+
+greeter = Greeter.new
+p greeter.greeting
+```
+
+```js
+const greeting = "Hello world";
+class Greeter {
+  greeting() {
+    return "Hello world"
+  }
+}
+const greeter = new Greeter();;
+console.log(greeter.greeting(););
+```
+
+<!-- TODO: There is an extra semi-colon here -->
