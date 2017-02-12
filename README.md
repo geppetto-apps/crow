@@ -6,7 +6,7 @@
 
 # crow
 
-`crow` transpiles [Crystal][cr] source code to valid [Flow][flow]/ES2015/JavaScript).
+`crow` transpiles [Crystal][cr] source code to valid [Flow][flow]/ES2015/JavaScript.
 
 Code that is transpiled to valid Flow syntax may be transpiled to valid ES2015,
 which may be transpiled to Javascript (via [Babel][babel]).
@@ -62,7 +62,7 @@ The goal of this project is to make it possible to write both frontend and backe
 code for a web project in Crystal; preferably in a way that allows for communication
 between native JS and native Crystal code. @asterite from the Crystal Team has
 noted that [crystal is not geared against the web](https://github.com/crystal-lang/crystal/issues/829#issuecomment-113955554)
-and there's stille work left to [make Crystal to work with asm.js][asm-issue].
+and there's still work left to [make Crystal to work with asm.js][asm-issue].
 Due to this `crow` currently approach the problem by using transpilation, but that
 may not be the case forever. The only public API for `crow` is the CLI that takes
 in some Crystal code and spits out something may run in the browser.
