@@ -19,7 +19,6 @@ greeting = "Hello world"
 def greet
   p greeting
 end
-
 greet
 ```
 
@@ -28,6 +27,5 @@ const greeting = "Hello world";
 function greet() {
   return console.log(greeting);
 }
-
-greet()
+greet();
 ```

@@ -2,7 +2,10 @@ require "./ast/*"
 
 module Crow
   module Vars
+    @@vars = [] of String
+
     private def transpile(node : Crystal::Assign)
+      @@vars << node.target.to_s
       assign(node.target, node.value)
     end
 
