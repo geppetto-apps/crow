@@ -7,6 +7,6 @@
      steps:
        - checkout
        - run: |
-         crystal deps
-         crystal tool format --check src spec
-         crystal spec
+           crystal deps
+           crystal tool format --check src spec
+           crystal spec
