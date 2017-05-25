@@ -3,7 +3,7 @@
    build:
      working_directory: ~/crow
      docker:
-       - image: geppettoapps/crystal-libxml2:0.22.0
+       - image: geppettoapps/crystal-libxml2-node:0.22.0
      steps:
        - checkout
        - run: |
