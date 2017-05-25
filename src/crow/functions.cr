@@ -51,8 +51,8 @@ module Crow
       else
         args = transpile call.args
 
-        method = "console.log" if method == "p"
-        method = "throw new Error" if method == "raise"
+        method = "console.log" if %w[p puts].includes? method
+        method = "throw new Crow.RuntimeError" if method == "raise"
 
         if call.obj
           if method == "new"
@@ -62,7 +62,11 @@ module Crow
           end
         end
 
-        "#{method}(#{args.join(", ")});"
+        if context? :template_string
+          "#{method}(#{args.join(", ")})"
+        else
+          "#{method}(#{args.join(", ")});"
+        end
       end
     end
 

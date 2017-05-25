@@ -5,6 +5,11 @@ require "logger"
 
 require "./crow/*"
 
+macro read_prelude
+  path = File.expand_path("../prelude.js", __FILE__)
+  File.read(path)
+end
+
 module Crow
   include Crow::Core
   include Crow::Vars
@@ -21,14 +26,19 @@ module Crow
   include Crow::Formatting
   extend self
 
+  PRELUDE = read_prelude
+
   @@logger = Logger.new(STDERR)
   @@logger.level = Logger::ERROR
   @@strict = false
 
-  def convert(crystal_source_code)
+  def convert(crystal_source_code, prelude = false)
     parser = Crystal::Parser.new(crystal_source_code)
     node = Crystal::Expressions.from(parser.parse)
-    transpile(node).strip
+    result = ""
+    result += PRELUDE if prelude
+    result += transpile(node).strip
+    result
   end
 
   def logger
@@ -50,5 +60,18 @@ module Crow
     else
       logger.info "Using fallback for node with type #{node.class}."
     end
+  end
+
+  CONTEXTS = [:top]
+
+  private def context(context, &blk)
+    CONTEXTS.push context
+    result = yield
+    CONTEXTS.pop
+    result
+  end
+
+  private def context?(context)
+    CONTEXTS.last == context
   end
 end

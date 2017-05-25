@@ -6,7 +6,9 @@ module Crow
         when Crystal::StringLiteral
           node.value
         else
-          "${#{transpile node}}"
+          context :template_string do
+            "${#{transpile node}}"
+          end
         end
       end
       "`#{data.join}`"
