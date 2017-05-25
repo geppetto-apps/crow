@@ -9,4 +9,4 @@ cache:
     - .shards
 matrix:
   CRYSTAL_VERSION:
-    - 0.20.5
+    - 0.22.0
