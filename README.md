@@ -118,8 +118,8 @@ Extracted from [Crystal's compiler][cr-parser].
 - [x] Case
 - [ ] ImplicitObj
 - [ ] Path
-- [ ] While
-- [ ] Until
+- [x] While
+- [x] Until
 - [ ] Generic
 - [ ] TypeDeclaration
 - [ ] UninitializedVar

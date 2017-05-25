@@ -24,6 +24,7 @@ module Crow
   include Crow::Classes
   include Crow::Macros
   include Crow::Formatting
+  include Crow::Loops
   extend self
 
   PRELUDE = read_prelude

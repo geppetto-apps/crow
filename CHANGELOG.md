@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Support loops (while/until/break/next)
 - Removed const/let support
 - Removed support for global variables (dropped from Crystal)
 - Properly transpile functions defined outside a class
