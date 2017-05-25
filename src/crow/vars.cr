@@ -1,5 +1,3 @@
-require "./ast/*"
-
 module Crow
   module Vars
     private def transpile(node : Crystal::Assign)
@@ -11,12 +9,8 @@ module Crow
       transpile Crystal::Assign.new(node.target, value)
     end
 
-    private def transpile(node : AST::ConstVar)
-      "const " + transpile(node.to_s)
-    end
-
-    private def transpile(node : AST::LetVar)
-      "let " + transpile(node.to_s)
+    private def transpile(node : AST::InitialVar)
+      "var #{node.to_s}"
     end
 
     private def transpile(node : Crystal::Var)

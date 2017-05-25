@@ -6,6 +6,6 @@ bar = :other_symbol
 ```
 
 ```js
-const foo = Symbol.for('symbol');
-const bar = Symbol.for('other_symbol');
+var foo = Symbol.for('symbol');
+var bar = Symbol.for('other_symbol');
 ```

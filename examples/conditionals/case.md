@@ -13,7 +13,7 @@ end
 ```
 
 ```js
-const value = "foo";
+var value = "foo";
 switch (value) {
 case "foo":
   console.log("yes");
@@ -40,7 +40,7 @@ end
 ```
 
 ```js
-const value = "foo";
+var value = "foo";
 switch (value) {
 case "foo":
   console.log("yes");
@@ -66,7 +66,7 @@ end
 ```
 
 ```js
-const value = "foo";
+var value = "foo";
 if (value instanceof Foo) {
   console.log("yes");
 } else if (value instanceof Bar) {

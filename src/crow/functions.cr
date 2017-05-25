@@ -48,6 +48,10 @@ module Crow
         "#{call.obj} * #{call.args[0]}"
       when "/"
         "#{call.obj} / #{call.args[0]}"
+      when "<"
+        "#{call.obj} < #{call.args[0]}"
+      when "=="
+        "#{call.obj} === #{call.args[0]}"
       else
         args = transpile call.args
 

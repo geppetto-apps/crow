@@ -1,48 +1,38 @@
-require "./ast/*"
+module AST
+  class InitialVar < Crystal::Var
+  end
+end
 
 module Crow
   module Expressions
     private def transpile(node : Crystal::Expressions)
-      Private.apply_let_and_const(node.expressions).map do |node|
+      Private.apply_var(node.expressions).map do |node|
         transpile node
       end.join("\n")
     end
 
     module Private
-      def self.apply_let_and_const(expressions : Array(Crystal::ASTNode))
+      def self.apply_var(expressions : Array(Crystal::ASTNode))
         defined = Hash(Crystal::ASTNode, Crystal::Assign).new
-        lets = [] of Crystal::Assign
+        vars = [] of Crystal::Assign
 
         expressions.each do |assign|
           case assign
           when Crystal::OpAssign
             if other_assign = defined[assign.target]?
-              lets << defined[assign.target]
+              vars << defined[assign.target]
             end
           when Crystal::Assign
             if defined[assign.target]?
-              lets << defined[assign.target]
+              vars << defined[assign.target]
             else
               defined[assign.target] = assign
             end
           end
         end
 
-        lets.each do |let|
-          target = let.target
-          case target
-          when Crystal::Var
-            let.target = AST::LetVar.new(target.name)
-            defined.delete target
-          end
-        end
-
-        defined.values.each do |const|
-          target = const.target
-          case target
-          when Crystal::Var
-            const.target = AST::ConstVar.new(target.name)
-          end
+        defined.each do |name, assign|
+          assign.target = AST::InitialVar.new(name.to_s)
         end
 
         expressions

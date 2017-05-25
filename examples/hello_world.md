@@ -16,7 +16,7 @@ p text
 ```
 
 ```js
-const text = "Hello World";
+var text = "Hello World";
 console.log(text);
 ```
 
@@ -30,7 +30,7 @@ p text
 ```
 
 ```js
-let text = "Hello";
+var text = "Hello";
 text = text + " ";
 text = text + "World";
 console.log(text);
@@ -54,7 +54,7 @@ p "Hello #{who}"
 ```
 
 ```js
-const who = "World";
+var who = "World";
 console.log(`Hello ${who}`);
 ```
 

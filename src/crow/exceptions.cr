@@ -38,7 +38,7 @@ module Crow
       case node_name
       when String
         if node_name != "e"
-          transpiled_body = "const #{node_name} = e;\n" + transpiled_body
+          transpiled_body = "var #{node_name} = e;\n" + transpiled_body
         end
       end
 
