@@ -67,11 +67,13 @@ Due to this `crow` currently approach the problem by using transpilation, but th
 may not be the case forever. The only public API for `crow` is the CLI that takes
 in some Crystal code and spits out something may run in the browser.
 
-Milestones:
+## Milestones
 
-- [ ] Run Crystal code in isolation in the browser
-- [ ] Call transpiled Crystal code from Javascript
-- [ ] Call Javascript from Crystal code
+- [ ] [1.0: Run Crystal code in isolation in the browser](https://github.com/geppetto-apps/crow/milestone/1)
+- [ ] [1.1: DOM manipulations from Crystal code](https://github.com/geppetto-apps/crow/milestone/2)
+- [ ] [1.2: Bind Crystal code to DOM events](https://github.com/geppetto-apps/crow/milestone/3)
+- [ ] [1.3: Call Crystal code from Javascript](https://github.com/geppetto-apps/crow/milestone/4)
+- [ ] [1.4: Call non-DOM related Javascript code from Crystal ](https://github.com/geppetto-apps/crow/milestone/5)
 
 ## Supported AST nodes
 
