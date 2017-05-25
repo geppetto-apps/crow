@@ -1,7 +1,7 @@
  version: 2
  jobs:
    build:
-     working_directory: ~/
+     working_directory: ~/crow
      docker:
        - image: geppettoapps/crystal-libxml2:0.22.0
      steps:
