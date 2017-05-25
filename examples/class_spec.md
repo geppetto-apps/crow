@@ -9,7 +9,7 @@ end
 
 ```js
 class Foo {
-  constructor(label : String) {
+  constructor(label) {
     this.label = label;
   }
 }

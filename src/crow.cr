@@ -6,7 +6,7 @@ require "logger"
 require "./crow/*"
 
 macro read_prelude
-  path = File.expand_path("../prelude.js", __FILE__)
+  path = File.expand_path("../prelude.cr", __FILE__)
   File.read(path)
 end
 
@@ -37,7 +37,7 @@ module Crow
     parser = Crystal::Parser.new(crystal_source_code)
     node = Crystal::Expressions.from(parser.parse)
     result = ""
-    result += PRELUDE if prelude
+    result += convert(PRELUDE) if prelude
     result += transpile(node).strip
     result
   end

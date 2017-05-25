@@ -9,12 +9,7 @@ module Crow
       end
 
       args = method.args.map do |arg|
-        val = "#{arg.name}"
-        case arg.restriction
-        when Crystal::Path
-          val += " : #{arg.restriction.to_s}"
-        end
-        val
+        "#{arg.name}"
       end
 
       method_body = if original_name == "initialize"
